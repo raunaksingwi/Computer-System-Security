@@ -61,6 +61,27 @@ def chainese_remainder(a1,a2,m1,m2):
   x = (a1 * M1 * M1_INVERSE + a2 * M2 * M2_INVERSE) % M
   return x
 
+def primitive_roots(p):
+  #p = int(input("Enter the P in Zp*\n"))
+  Zn = [int(i) for i in range(1,p)]
+  Zp = []
+
+  for element in Zn:
+    if is_relatively_prime(element, p) == 1:
+      Zp.append(element)
+
+  total_elements = len(Zp)
+  primitive_roots = []
+
+  for a in Zp:
+    group = set()
+    for n in Zn:
+      group.add(pow(a,n)%p)
+    if len(group) == total_elements:
+      primitive_roots.append(a)
+
+  return primitive_roots
+
 def main():
   print(extended_euclidean(26,11))
 

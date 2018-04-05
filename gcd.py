@@ -16,12 +16,13 @@ def gcd(a,b):
 
   return a
 
+def hasInverse(a,b):
+  if gcd(a, b) == 1:
+    return True
+
 def main():
-  print(gcd(15,5))
-  print(gcd(11,0))
-  print(gcd(0,12))
-  print(gcd(6,4))
-  print(gcd(12,6))
+  #print(gcd(15,5))
+
 
 
 if __name__ == '__main__':
